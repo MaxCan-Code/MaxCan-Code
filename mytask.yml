@@ -1,0 +1,31 @@
+---
+- hosts: localhost
+  tasks:
+     - command: "zero apply-symlinks"
+     - command: "brew leaves"
+     - homebrew:
+         pkg:
+           - d12frosted/emacs-plus/emacs-plus@28
+         options:
+           - with-no-titlebar
+           - with-x11
+           - with-xwidgets
+           - with-native-comp
+     - package:
+         name:
+           - neovim
+           - enchant
+     - package:
+         name:
+           - kakoune
+           - vis
+         state: latest
+     - homebrew_cask:
+         pkg:
+           - amethyst
+           - github
+           - joshjon-nocturnal
+           - qutebrowser
+           - shortcat
+           - honer
+

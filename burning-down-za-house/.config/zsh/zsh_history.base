@@ -1,0 +1,25 @@
+ # < ~/.config/zsh/zsh_history.base > ~/.zsh_history
+ vi -i NONE -d ~/.{zsh_history,config/zsh/zsh_history.base}
+ zero run-scripts
+ zero apply-symlinks
+ vi -i NONE ~/.viminfo
+ rm -r ~/.local/share/nvim/shada
+ {watchexec -pw ~/.vim/init.lua 'nvim --headless +"au User PackerComplete qa" +PackerSync' &}
+ vi +"cd ~/vc"
+ viss +"cd $HOME/vc"
+ ni +"cd ~/.dotfiles"
+ ni +"cd ~/.vim"
+ tmux new kak -e "cd ~/vc"
+
+ julia --project=$HOME/vc/projects/CSCI-3010
+ pax -rwlq scimax ~/.emacs.d
+ git checkout -dq origin/HEAD
+ git rebase -i H
+ git ls-files -om --directory
+ sftp -P 2207
+ exec zsh
+
+ emacs --with-profile doom&
+ emacs --with-profile scimax
+ emacs --with-profile spacemacs
+
