@@ -1,0 +1,69 @@
+# https://wiki.archlinux.org/index.php/zsh#Simple_.zshrc
+autoload -Uz compinit promptinit bashcompinit
+compinit -u
+promptinit
+bashcompinit
+
+# eval "$(pandoc --bash-completion)"
+
+zstyle ':completion:*' menu  select
+prompt adam2
+
+set -o histignore{space,alldups}
+
+# https://wiki.archlinux.org/index.php/zsh#Fish-like_syntax_highlighting_and_autosuggestions
+source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+source ~/.config/zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+# Always starting with insert mode for each command line
+ZVM_LINE_INIT_MODE=$ZVM_MODE_NORMAL
+
+# Your custom widget
+function my_custom_widget() {
+  # https://libredd.it/bbbluo
+  _expand_alias
+  zvm_self_insert
+  # magic-space
+}
+
+# The plugin will auto execute this zvm_after_lazy_keybindings function
+function zvm_after_lazy_keybindings() {
+  # Here we define the custom widget
+  zvm_define_widget my_custom_widget
+
+  zvm_bindkey viins '^K' _expand_alias
+  zvm_bindkey viins ' ' my_custom_widget
+}
+
+alias yay=paru
+alias g=git
+alias ni=nvim
+alias l=' ls -AGFS'
+alias xs=' exec $SHELL'
+
+# ez ^K expansions
+alias vk=' vi +"cd ~/vc"'
+alias kk=' tmux new kak -e "cd ~/vc"'
+alias gk=' git rebase -i H'
+alias hk=' home-manager switch --flake ~/.dotfiles'
+alias nk=' nix shell nixpkgs/nixpkgs-unstable#'
+
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'mamba init' !!
+eval "$(~/bin/micromamba shell hook)"
+# <<< mamba initialize <<<
+# >>> umamba completion >>>
+_umamba_completions()
+{
+  COMPREPLY=($(micromamba completer "${COMP_WORDS[@]:1}"))
+}
+
+complete -F _umamba_completions micromamba
+# <<< umamba completion <<<
+micromamba activate
+
+# Created by `pipx`
+# path+=~/.local/bin
+# eval "$(pandoc --bash-completion)"
+eval "$(luarocks path --bin)"
+path+=~/.cargo/bin

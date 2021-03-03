@@ -1,0 +1,15 @@
+* clone into wherever and link
+#+begin_src sh
+  # always fc
+  mkdir -p ~/vc/projects
+  cd ~/vc/projects
+  git clone --{remote,shallow,recurse}-submodules https://git.io/JZnMZ
+  ln -svn ~+/MaxCan-Code ~/.dotfiles
+  # :%y A
+#+end_src
+* [[https://github.com/zero-sh/zero.sh#submodule][0^]]
+#+begin_src sh
+  caffeinate ~/.dotfiles/zero/setup
+  caffeinate zero run-scripts
+  < ~/.config/zsh/zsh_history.base > ~/.zsh_history
+#+end_src

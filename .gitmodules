@@ -1,0 +1,32 @@
+[submodule "zero"]
+	path = zero
+	url = https://github.com/zero-sh/zero.sh
+[submodule "burning-down-za-house/.config/zsh/zsh-syntax-highlighting"]
+	path = burning-down-za-house/.config/zsh/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting
+	ignore = all
+[submodule "burning-down-za-house/.config/zsh/zsh-vi-mode"]
+	path = burning-down-za-house/.config/zsh/zsh-vi-mode
+	url = https://github.com/jeffreytse/zsh-vi-mode
+	ignore = all
+[submodule "burning-down-za-house/.config/piu"]
+	path = burning-down-za-house/.config/piu
+	url = https://github.com/keithieopia/piu
+	ignore = all
+[submodule "burning-down-za-house/.config/nvim"]
+	path = burning-down-za-house/.config/nvim
+	url = https://github.com/MaxCan-Code/minimal_vim
+	ignore = all
+[submodule "burning-down-za-house/.config/emacs"]
+	path = burning-down-za-house/.config/emacs
+	url = https://github.com/plexus/chemacs2
+	ignore = dirty
+[submodule "burning-down-za-house/.config/chemacs/emacs-for-vimmers"]
+	path = burning-down-za-house/.config/chemacs/emacs-for-vimmers
+	url = https://github.com/MaxCan-Code/emacs-for-vimmers
+	ignore = all
+[submodule "burning-down-za-house/.config/kak"]
+	path = burning-down-za-house/.config/kak
+	url = https://github.com/MaxCan-Code/kak-sensible
+	branch = my-kakrc
+	ignore = all

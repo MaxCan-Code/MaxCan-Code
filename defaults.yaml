@@ -1,0 +1,17 @@
+com.apple.dock:
+  mineffect: "scale"
+  show-recents: false
+  tilesize: 1
+
+com.apple.finder:
+  AppleShowAllFiles: true
+  QuitMenuItem: true
+
+com.apple.Safari:
+  NSRequiresAquaSystemAppearance: true
+
+com.github.Jelmerro.vieb:
+  NSRequiresAquaSystemAppearance: true
+
+com.github.GitHubClient:
+  NSRequiresAquaSystemAppearance: true
