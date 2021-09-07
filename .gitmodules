@@ -1,0 +1,16 @@
+[submodule "symlinks/.config/nvim"]
+	path = symlinks/.config/nvim
+	url  = ../nyoom.nvim
+	ignore = all
+[submodule "symlinks/.config/emacs"]
+	path = symlinks/.config/emacs
+	url  = ../evil-emacs-kickstart
+	ignore = all
+[submodule "symlinks/.config/kak"]
+	path = symlinks/.config/kak
+	url  = ../kak-sensible
+	branch = my-kakrc
+	ignore = all
+[submodule "symlinks/.config/sway/_swaymsg"]
+	path = symlinks/.config/sway/_swaymsg
+	url  = https://gist.github.com/3ba81d4ae9acfe88daecd300dfcd7121

@@ -1,0 +1,21 @@
+- https://extract.pics
+- https://bandori.party/activity/34762
+- https://d4dj-pj.com/live-event/post-105
+- https://tk0j15ho.user.webaccel.jp/wordpress/wp-content/uploads/2023/08/D4DJ_FES24_KV_0301-1.jpg
+- https://d4dj.info/game/card/30220001-en
+- https://cdn.d4dj.info/en/ondemand/card_chara/card_chara_030220001_0.jpg
+- https://zerochan.net/3232753
+- https://static.zerochan.net/BanG.Dream%21.Girls.Band.Party%21.full.3232753.png
+- https://bang-dream.bushimo.jp/raise-a-suilen
+- https://bang-dream.bushimo.jp/raise-a-suilen/assets/images/common/logo.svg
+- https://jp.mercari.com/en/shops/product/gSeB9qALBu8BCv7gG4QQmS
+- https://assets.mercari-shops-static.com/-/large/plain/WBivvEKyaTk9vUvhFmgyJa.jpg
+- https://nitter.net/GabriellaG439/status/1526249971573370880
+- https://nitter.net/pic/orig/media/FS5TipeUYAAkMG7.jpg
+- https://pbs.twimg.com/media/FS5TipeUYAAkMG7.png
+- https://love-live-fanon.fandom.com/wiki/File:LL-JJBA-Yoshiko-fallen-angel-Kakoin-pose.jpg
+- https://static.wikia.nocookie.net/love-live-fanon/images/7/79/LL-JJBA-Yoshiko-fallen-angel-Kakoin-pose.jpg
+
+#+begin_src shell
+  magick -background none -density 500 logo.{svg,png}
+#+end_src

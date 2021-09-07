@@ -1,0 +1,12 @@
+# $include /etc/inputrc
+set editing-mode vi
+set show-mode-in-prompt on
+$if term=linux
+        set vi-ins-mode-string \1\e[?0c\2
+        set vi-cmd-mode-string \1\e[?8c\2
+$else
+        set vi-ins-mode-string \1\e[6 q\2
+        set vi-cmd-mode-string \1\e[2 q\2
+$endif
+# https://mlochbaum.github.io/BQN/editors
+# https://gist.github.com/0racle/bdaeb945cf42de317a48db7b1529f0fe

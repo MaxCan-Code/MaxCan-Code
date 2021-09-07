@@ -1,0 +1,103 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch"
+    ],
+    "deny": [
+      "Read(//tmp/**)",
+      "Read(//proc/**)",
+      "Read(//sys/**)",
+      "Read(//opt/**)",
+      "Read(//srv/**)",
+      "Read(//boot/**)",
+      "Read(~/.ssh/**)",
+      "Read(~/.gnupg/**)",
+      "Read(~/.aws/**)",
+      "Read(~/.config/gh/**)",
+      "Read(~/.netrc)",
+      "Read(~/.password-store/**)",
+      "Read(~/.mozilla/**)",
+      "Read(~/.config/chromium/**)",
+      "Read(~/.local/share/keyrings/**)",
+      "Read(~/.local/share/nyxt/**)",
+      "Read(~/.local/share/qutebrowser/**)",
+      "Bash(git p*)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo",
+            "args": [
+              "{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"additionalContext\":\"Before hand-rolling a workaround, look for existing work first, not after: the purpose-built command for the task, and for a dependency that broke or vanished after an update, its upstream removal commit, PR and linked issues - a fix or mirror usually already exists.\"}}"
+            ]
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/test-suite-reminder.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/cap-edit-size.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/no-bare-cli-tools.sh"
+          }
+        ]
+      }
+    ]
+  },
+  "worktree": {
+    "baseRef": "head"
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline-command.k"
+  },
+  "enabledPlugins": {
+    "cc-plugin-you-should-know@builtin": true
+  },
+  "outputStyle": "Concise",
+  "sandbox": {
+    "enabled": true,
+    "network": {
+      "allowAllUnixSockets": true
+    },
+    "filesystem": {
+      "allowWrite": [
+        "~/.cache/nix"
+      ],
+      "denyRead": [
+        "/tmp/*"
+      ]
+    }
+  },
+  "askUserQuestionTimeout": "never",
+  "dialogExpiry": "never",
+  "tui": "fullscreen",
+  "prefersReducedMotion": true,
+  "editorMode": "vim",
+  "preferredNotifChannel": "terminal_bell",
+  "autoCompactEnabled": false,
+  "idleCompaction": false,
+  "switchModelsOnFlag": false,
+  "autoContinueAtUsageLimit": false,
+  "remoteControlAtStartup": false,
+  "useAutoModeDuringPlan": false
+}

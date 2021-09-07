@@ -1,0 +1,437 @@
+{
+  "nodes": {
+    "asahi-fairydust": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1788902783,
+        "narHash": "sha256-W3yMSUe6xa+M/X0k86kbCS4g3d7jJmO3WV9L/5rQRhI=",
+        "owner": "AsahiLinux",
+        "repo": "linux",
+        "rev": "ce9f2eba72c061a50b2d790450e90af3439d8c24",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AsahiLinux",
+        "ref": "fairydust",
+        "repo": "linux",
+        "type": "github"
+      }
+    },
+    "asahi-installer": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1781301126,
+        "narHash": "sha256-eZwKvgYNQ7fyZtoU2Cu8oOAkRO32s6snPSkUcbfnUlU=",
+        "owner": "AsahiLinux",
+        "repo": "asahi-installer",
+        "rev": "c53d66dc71937efa2530d4323c81addaebb5a09b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AsahiLinux",
+        "repo": "asahi-installer",
+        "type": "github"
+      }
+    },
+    "disko": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1768920986,
+        "narHash": "sha256-CNzzBsRhq7gg4BMBuTDObiWDH/rFYHEuDRVOwCcwXw4=",
+        "owner": "nix-community",
+        "repo": "disko",
+        "rev": "de5708739256238fb912c62f03988815db89ec9a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "latest",
+        "repo": "disko",
+        "type": "github"
+      }
+    },
+    "firmware-abomination": {
+      "inputs": {
+        "asahi-installer": "asahi-installer",
+        "flake-compat": "flake-compat",
+        "nixpkgs": [
+          "nixpkgs-unfree"
+        ]
+      },
+      "locked": {
+        "lastModified": 1785533222,
+        "narHash": "sha256-RhF9jOkNO4/QCd90EDg/8crVmmToQqizMGYhNl4SKaA=",
+        "owner": "MaxCan-Code",
+        "repo": "firmware-abomination",
+        "rev": "8d4fafde66590f008d4dcd9e1a179a3c8ecef82c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "MaxCan-Code",
+        "repo": "firmware-abomination",
+        "type": "github"
+      }
+    },
+    "flake-compat": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1767039857,
+        "narHash": "sha256-vNpUSpF5Nuw8xvDLj2KCwwksIbjua2LZCqhV1LNRDns=",
+        "owner": "NixOS",
+        "repo": "flake-compat",
+        "rev": "5edf11c44bc78a0d334f6334cdaf7d60d732daab",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "flake-compat",
+        "type": "github"
+      }
+    },
+    "flake-compat_2": {
+      "locked": {
+        "lastModified": 1761640442,
+        "narHash": "sha256-AtrEP6Jmdvrqiv4x2xa5mrtaIp3OEe8uBYCDZDS+hu8=",
+        "owner": "nix-community",
+        "repo": "flake-compat",
+        "rev": "4a56054d8ffc173222d09dad23adf4ba946c8884",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "flake-compat",
+        "type": "github"
+      }
+    },
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1791153770,
+        "narHash": "sha256-+IqnyJotwLNMkhyqa3F3YtX58W2HrUBqRz++RGt42SM=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "6807ee9587ecc28f7f05509e2043d68efa7fe0f4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "kakoune": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1773297285,
+        "narHash": "sha256-51+hYlT+qSxdjB2JN5F7UgIVBXnStgAHnXTAMl1NZk0=",
+        "owner": "krobelus",
+        "repo": "kakoune",
+        "rev": "b9f92d748f7b088771a84ef6a3c78350b6e9fa6b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "krobelus",
+        "ref": "jj",
+        "repo": "kakoune",
+        "type": "github"
+      }
+    },
+    "ngn-k": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1791092180,
+        "narHash": "sha256-4FfKJmsBJzai2fYgSG9WnY+UFd52PHa+S5w9NgX+XW0=",
+        "ref": "refs/heads/master",
+        "rev": "85a0c19055cb0cdd1a0f794d6c0b94d31389a9f5",
+        "revCount": 4716,
+        "type": "git",
+        "url": "https://codeberg.org/growler/k"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://codeberg.org/growler/k"
+      }
+    },
+    "nix-formatter-pack": {
+      "inputs": {
+        "nixpkgs": [
+          "nix-on-droid",
+          "nixpkgs"
+        ],
+        "nmd": [
+          "nix-on-droid",
+          "nmd"
+        ],
+        "nmt": "nmt"
+      },
+      "locked": {
+        "lastModified": 1705252799,
+        "narHash": "sha256-HgSTREh7VoXjGgNDwKQUYcYo13rPkltW7IitHrTPA5c=",
+        "owner": "Gerschtli",
+        "repo": "nix-formatter-pack",
+        "rev": "2de39dedd79aab14c01b9e2934842051a160ffa5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Gerschtli",
+        "repo": "nix-formatter-pack",
+        "type": "github"
+      }
+    },
+    "nix-on-droid": {
+      "inputs": {
+        "home-manager": [
+          "home-manager"
+        ],
+        "nix-formatter-pack": "nix-formatter-pack",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "nixpkgs-docs": "nixpkgs-docs",
+        "nixpkgs-for-bootstrap": "nixpkgs-for-bootstrap",
+        "nmd": "nmd"
+      },
+      "locked": {
+        "lastModified": 1787352026,
+        "narHash": "sha256-2MKUKRNV+5qs3nbQDmz7L6KRHSEHDy/lZjfIAYMZSOE=",
+        "owner": "nix-community",
+        "repo": "nix-on-droid",
+        "rev": "df611d5358360092b1d2e7e756f94b23843bd9d6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nix-on-droid",
+        "type": "github"
+      }
+    },
+    "nixos-apple-silicon": {
+      "inputs": {
+        "flake-compat": "flake-compat_2",
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1791830269,
+        "narHash": "sha256-A3JRH8qkp+NrP3sSwfutu7nZ5AclDY/HDmn/xDxduM4=",
+        "owner": "nix-community",
+        "repo": "nixos-apple-silicon",
+        "rev": "12cd234285d3037cedfab979aa70b75284a59afc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nixos-apple-silicon",
+        "type": "github"
+      }
+    },
+    "nixos-hardware": {
+      "locked": {
+        "lastModified": 1765817020,
+        "narHash": "sha256-zEVZ1TZLqG38/Xsb0LPaGMf/DiXKxmQcpuWrJbuqdB8=",
+        "owner": "masrlinu",
+        "repo": "nixos-hardware",
+        "rev": "5a323a3710ed0cfe89eb566670f5737ab04c91c4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "masrlinu",
+        "repo": "nixos-hardware",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1768661221,
+        "narHash": "sha256-MJwOjrIISfOpdI9x4C+5WFQXvHtOuj5mqLZ4TMEtk1M=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "3327b113f2ef698d380df83fbccefad7e83d7769",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-docs": {
+      "locked": {
+        "lastModified": 1705957679,
+        "narHash": "sha256-Q8LJaVZGJ9wo33wBafvZSzapYsjOaNjP/pOnSiKVGHY=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "9a333eaa80901efe01df07eade2c16d183761fa3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "release-23.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-for-bootstrap": {
+      "locked": {
+        "lastModified": 1720244366,
+        "narHash": "sha256-WrDV0FPMVd2Sq9hkR5LNHudS3OSMmUrs90JUTN+MXpA=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "49ee0e94463abada1de470c9c07bfc12b36dcf40",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "49ee0e94463abada1de470c9c07bfc12b36dcf40",
+        "type": "github"
+      }
+    },
+    "nixpkgs-unfree": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1755249704,
+        "narHash": "sha256-J1mqsd/gqZ32G3YOzWk9sppLbXXLEpu37hrZfRcTtdg=",
+        "owner": "numtide",
+        "repo": "nixpkgs-unfree",
+        "rev": "12d82a604d21a65df008bdb1515eecb96f9e55dc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "nixpkgs-unfree",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1791456040,
+        "narHash": "sha256-H83yz/do+hjOO0uujHyH8RgtIQP2v7Mw+cLwcZK/xKc=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "e7439b6b14ad3cc35d05608ebca9bce01a25f5f8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1791011291,
+        "narHash": "sha256-V6OBJccNKBo/ktknxlJXZChPoI0NE2lembArBO3CE9k=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "73e728ddb6b7a12d18808f510813a13ee1fe4cce",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nmd": {
+      "inputs": {
+        "nixpkgs": [
+          "nix-on-droid",
+          "nixpkgs-docs"
+        ],
+        "scss-reset": "scss-reset"
+      },
+      "locked": {
+        "lastModified": 1705050560,
+        "narHash": "sha256-x3zzcdvhJpodsmdjqB4t5mkVW22V3wqHLOun0KRBzUI=",
+        "owner": "~rycee",
+        "repo": "nmd",
+        "rev": "66d9334933119c36f91a78d565c152a4fdc8d3d3",
+        "type": "sourcehut"
+      },
+      "original": {
+        "owner": "~rycee",
+        "repo": "nmd",
+        "type": "sourcehut"
+      }
+    },
+    "nmt": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1648075362,
+        "narHash": "sha256-u36WgzoA84dMVsGXzml4wZ5ckGgfnvS0ryzo/3zn/Pc=",
+        "owner": "rycee",
+        "repo": "nmt",
+        "rev": "d83601002c99b78c89ea80e5e6ba21addcfe12ae",
+        "type": "gitlab"
+      },
+      "original": {
+        "owner": "rycee",
+        "repo": "nmt",
+        "type": "gitlab"
+      }
+    },
+    "ride": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1788792921,
+        "narHash": "sha256-waWOk5Exte5pTwg2AiGva2i+1R1iqCLjSeznmMvXzGM=",
+        "owner": "Dyalog",
+        "repo": "ride",
+        "rev": "307003ef59ca495fbf6fc72acf32a3f8e4b5fa2a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Dyalog",
+        "repo": "ride",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "asahi-fairydust": "asahi-fairydust",
+        "disko": "disko",
+        "firmware-abomination": "firmware-abomination",
+        "home-manager": "home-manager",
+        "kakoune": "kakoune",
+        "ngn-k": "ngn-k",
+        "nix-on-droid": "nix-on-droid",
+        "nixos-apple-silicon": "nixos-apple-silicon",
+        "nixos-hardware": "nixos-hardware",
+        "nixpkgs": "nixpkgs_3",
+        "nixpkgs-unfree": "nixpkgs-unfree",
+        "ride": "ride"
+      }
+    },
+    "scss-reset": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1631450058,
+        "narHash": "sha256-muDlZJPtXDIGevSEWkicPP0HQ6VtucbkMNygpGlBEUM=",
+        "owner": "andreymatin",
+        "repo": "scss-reset",
+        "rev": "0cf50e27a4e95e9bb5b1715eedf9c54dee1a5a91",
+        "type": "github"
+      },
+      "original": {
+        "owner": "andreymatin",
+        "repo": "scss-reset",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

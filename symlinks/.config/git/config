@@ -1,0 +1,47 @@
+[user]
+	name = MaxCan-Code
+	email = 35848843+MaxCan-Code@users.noreply.github.com
+[alias]
+	c = checkout
+	s = status -bs
+	l = log --compact-summary --graph --oneline -WbX -C
+	r = -c sequence.editor=: rebase -i
+	p = push --force-with-lease
+	d = difftool -y
+	m = submodule foreach git status -bs
+	dw = diff --color-words
+	sh = show
+[diff]
+	colorMoved = default
+	tool = difft
+	algorithm = histogram
+	mnemonicprefix = true
+[difftool "difft"]
+	cmd = difft --display inline --color always "$LOCAL" "$REMOTE"
+[pager]
+	difftool = true
+[rebase]
+	abbreviateCommands = true
+	autoSquash = true
+	autoStash = true
+	stat = true
+[merge]
+	conflictstyle = zdiff3
+[commit]
+	verbose = true
+[help]
+	autocorrect = prompt
+[grep]
+	patternType = perl
+[feature]
+	experimental = true
+[credential "https://github.com"]
+	helper =
+	helper = /usr/bin/env gh auth git-credential
+[credential "https://gitlab.com"]
+	helper =
+	helper = /usr/bin/env glab auth git-credential
+[branch]
+	autosetupmerge = always
+[rerere]
+	enabled = true

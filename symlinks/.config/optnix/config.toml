@@ -1,0 +1,26 @@
+default_scope = "asahi"
+formatter_cmd = "nixfmt"
+[scopes.asahi]
+options-list-cmd = '''
+nix eval "/etc/nixos#nixosConfigurations.asahi" --json --apply 'input: let
+  inherit (input) options pkgs;
+
+  optionsList = builtins.filter
+    (v: v.visible && !v.internal)
+    (pkgs.lib.optionAttrSetToDocList options);
+in
+  optionsList'
+'''
+evaluator = "nix eval /etc/nixos#nixosConfigurations.asahi.config.{{ .Option }}"
+[scopes.nixos]
+options-list-cmd = '''
+nix eval "/etc/nixos#nixosConfigurations.nixos" --json --apply 'input: let
+  inherit (input) options pkgs;
+
+  optionsList = builtins.filter
+    (v: v.visible && !v.internal)
+    (pkgs.lib.optionAttrSetToDocList options);
+in
+  optionsList'
+'''
+evaluator = "nix eval /etc/nixos#nixosConfigurations.nixos.config.{{ .Option }}"
