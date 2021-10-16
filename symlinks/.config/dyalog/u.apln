@@ -1,0 +1,7 @@
+:Namespace u    ⍝ utils
+    ⍝   _fmt←{
+    B←#.B←{⍵ ⍵⍵⍨⍺⍺ ⍺} ⋄ #.(⎕PW ⎕ML)←230 0
+    u←⎕SE.Dyalog.Utils ⋄ r←u.repObj ⋄ d←0 1 0 u.disp⊢
+    f←⎕SE.UCMD'Add ',⊢⊣⎕FX∘⎕OR ⋄ #.Run←⎕SE.UCMD'Box -t=tree'⍨
+    ⍝   }
+:EndNamespace
