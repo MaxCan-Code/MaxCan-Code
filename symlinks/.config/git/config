@@ -1,0 +1,22 @@
+[user]
+	name = MaxCan-Code
+	email = 35848843+MaxCan-Code@users.noreply.github.com
+[alias]
+	c = checkout
+	s = status
+	l = log --compact-summary --graph --oneline -WbX -C
+	r = rebase -i --autostash --autosquash
+	p = push --force-with-lease
+	d = difftool -y
+	w = diff --color-words
+[diff]
+	colorMoved = dimmed-zebra
+	# external = difft
+	tool = difft
+[difftool "difft"]
+	cmd = difft "$LOCAL" "$REMOTE"
+[pager]
+	difftool = true
+[credential "https://github.com"]
+	helper =
+	helper = /etc/profiles/per-user/user/bin/gh auth git-credential
