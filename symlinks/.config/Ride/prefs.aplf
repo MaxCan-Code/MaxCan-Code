@@ -1,0 +1,5 @@
+ prefs←{f←'prefs.json' ⋄ J←⎕JSON⍠'Dialect' 'JSON5'⍠'Compact' 0
+     _J←{(J∘⊃∘⎕NGET f,⍵↑⍕5).(⎕VSET∘(↑,⍥⊂⍵ ⎕JSON¨@⍺⍺⍎¨)∘⎕NL∘-∘⍳11⍨)''}
+     ⍺←0
+     'i'≡⊃⍵:(f,⍕5)⍺ ⎕NPUT⍨J'             '⊢(⊃¨∊'[{'⍨)_J 0
+     'o'≡⊃⍵:' '⊢f ⍺ ⎕NPUT⍨⎕JSON⍠'Compact' 0(326=⎕DR¨)_J 1}

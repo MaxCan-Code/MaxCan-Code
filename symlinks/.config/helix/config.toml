@@ -1,0 +1,33 @@
+theme = "base16_default"
+
+[editor]
+true-color = true
+line-number = "relative"
+whitespace.render = "all"
+indent-guides.render = true
+cursorline = true
+color-modes = true
+
+[keys.normal]
+o = "command_mode"
+
+[keys.normal.g]
+m = "goto_window_center"
+k = "goto_file_start"
+j = "goto_last_line"
+
+[keys.normal." "]
+u = ":w"
+w.Q = ":qa"
+
+[keys.normal." ".l]
+r = ":config-reload"
+o = ":config-open"
+l = ":theme flatwhite"
+d = ":theme dracula_at_night"
+# d = ":theme snazzy"
+
+[keys.select]
+g.m = "goto_window_center"
+g.k = "goto_file_start"
+g.j = "goto_last_line"
