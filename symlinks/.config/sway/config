@@ -1,0 +1,65 @@
+include /etc/sway/config
+### Idle configuration
+exec swayidle -w \
+         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on" && light -S 5' \
+         timeout 900 'systemctl suspend' \
+         before-sleep 'swaylock -f -i ~/w/linus.png -s center'
+
+### Input configuration
+  input type:touchpad {
+      dwt enabled
+      tap enabled
+      natural_scroll enabled
+      middle_emulation enabled
+      accel_profile adaptive
+      events disabled
+  }
+  # input type:keyboard {
+  #     xkb_layout us,apl
+  #     xkb_variant ,dyalog
+  #     xkb_options grp:menu_switch,misc:apl
+  #     # xkb_options caps:ctrl_modifier,caps:escape
+  # }
+  seat "*" hide_cursor when-typing enable
+
+workspace_auto_back_and_forth yes
+gaps inner 5
+
+### Key bindings
+    unbindsym $mod+9
+    bindsym $mod+9 workspace number 9 , output * bg ~/w/full-graph-extended-darkmode.png fit
+    unbindsym $mod+8
+    bindsym $mod+8 workspace number 8 , output * bg ~/w/File:LL-JJBA-Yoshiko-fallen-angel-Kakoin-pose.jpg fit
+    unbindsym $mod+7
+    bindsym $mod+7 workspace number 7 , output * bg ~/w/card_chara_030220001_0.jpg fit
+    unbindsym $mod+6
+    bindsym $mod+6 workspace number 6 , output * bg ~/w/BanG.Dream%21.Girls.Band.Party%21.full.3232753.png fit
+    unbindsym $mod+5
+    bindsym $mod+5 workspace number 5 , output * bg ~/w/D4DJ.Groovy.Mix.full.3795619.jpg fit
+    unbindsym $mod+Shift+e
+    bindsym $mod+Shift+e exit
+    bindsym $mod+Shift+m input type:touchpad events enabled
+#
+# Resizing containers:
+#
+mode "resize" {
+    bindsym Shift+$left resize shrink width 100px
+    bindsym Shift+$down resize grow height 100px
+    bindsym Shift+$up resize shrink height 100px
+    bindsym Shift+$right resize grow width 100px
+}
+#
+# Status Bar:
+#
+bar bar-0 {
+    font pango:monospace 13
+    status_command i3status
+    colors {
+        focused_workspace  #32323200 #2e9ef4 #ffffffff
+        inactive_workspace #4c7899ff #4c7899 #ffffffff
+    }
+}
+# chiyu
+client.focused   #4ca899 #00bbff #ffffff
+
+exec activate-linux
