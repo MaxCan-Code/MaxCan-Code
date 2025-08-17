@@ -17,48 +17,34 @@ sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder
 cd
 echo end https://github.com/StevenBlack/hosts#macos
 
-if [ ! -f ~/bin/micromamba ]; then
-    curl -Ls https://micro.mamba.pm/api/micromamba/osx-64/latest | tar -xvj bin/micromamba
-    mv bin ~
-fi
-mkdir ~/micromamba
-~/bin/micromamba install -yf ~/.mambarc.yml
-~/micromamba/bin/luarocks --local install fennel
-
 rm -r ~/.{emacs.d,vim,qutebrowser}
-mkdir ~/.qutebrowser
-touch ~/.qutebrowser/q # block bkmk symlinks
-
 zero apply-symlinks
 
+echo is nix on?
+read
+
+pkgs=nixpkgs/nixpkgs-unstable
+nix run ~/.dotfiles -- switch -n --flake ~/.dotfiles
+
 q=~/.qutebrowser/config
-~/micromamba/bin/hy2py $q.hy | tail -n +2 -- > $q.py
+nix shell $pkgs#hy -c hy2py $q.hy | tail -n +2 -- > $q.py
 
 v=~/.config/vis
-~/.luarocks/bin/fennel -c $v/visrc.fnl > $v/visrc.lua
-~/.luarocks/bin/fennel -c $v/themes/nu.fnl > $v/themes/nu.lua
-
-~/micromamba/bin/cargo install -q watchexec-cli ripgrep broot gitui
+nix run $pkgs#fennel -- -c $v/visrc.fnl > $v/visrc.lua
+nix run $pkgs#fennel -- -c $v/themes/nu.fnl > $v/themes/nu.lua
+# nix shell $pkgs#{hy,fennel} -c \
 
 echo start piu
 chmod +x ~/.config/piu/piu
 sudo ln -svn ~/.config/piu/piu /usr/local/bin
 
-piu i -q neovim github shortcat amethyst
-github ~/.dotfiles
+piu i -q shortcat amethyst
 open /Applications/{Shortcat,Amethyst}.app
 
-piu i -q honer joshjon-nocturnal qutebrowser
+piu i -q honer joshjon-nocturnal
+# https://grain-lang.org/docs/getting_grain#MacOS-x64---Homebrew
+brew install --no-quarantine qutebrowser
+
 open /Applications/{Honer,Nocturnal,qutebrowser}.app
 
-piu i -q --HEAD vis kakoune
-
-# cd /usr/local/Homebrew/Library/Taps/homebrew/homebrew-cask/Casks
-# https://www.zotero.org/support/dev_builds
-# curl -LO https://github.com/alanjferguson/homebrew-cask-versions/raw/adding-zotero-beta/Casks/zotero-beta.rb
-# cd
-# piu i -q --cask docker julia zotero-beta
-
-# brew tap d12frosted/emacs-plus
-piu i -q d12frosted/emacs-plus/emacs-plus@28 # --with-{no-titlebar,xwidgets,native-comp}
-piu i -q enchant
+piu i -q --cask jasper

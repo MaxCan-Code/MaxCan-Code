@@ -1,0 +1,213 @@
+# $include /etc/inputrc
+set editing-mode vi
+set show-mode-in-prompt on
+$if term=linux
+        set vi-ins-mode-string \1\e[?0c\2
+        set vi-cmd-mode-string \1\e[?8c\2
+$else
+        set vi-ins-mode-string \1\e[6 q\2
+        set vi-cmd-mode-string \1\e[2 q\2
+$endif
+$if mode=vi
+        set keymap vi-command
+        "\C-l":redraw-current-line
+        set keymap vi-insert
+        "\C-l":redraw-current-line
+$endif
+# https://mlochbaum.github.io/BQN/editors/index.html
+# https://gist.github.com/0racle/bdaeb945cf42de317a48db7b1529f0fe
+
+# BQN keybindings for Readline configuration file .inputrc
+# Enables BQN combinations in bash and rlwrap (used by dzaima/BQN REPL)
+# curl -L https://github.com/mlochbaum/BQN/raw/refs/heads/master/editors/inputrc
+# BQN keybindings for Readline configuration file .inputrc
+# Enables BQN combinations in bash and rlwrap (used by dzaima/BQN REPL)
+
+"\\`" "˜"
+"\\1" "˘"
+"\\2" "¨"
+"\\3" "⁼"
+"\\4" "⌜"
+"\\5" "´"
+"\\6" "˝"
+"\\7" "7"
+"\\8" "∞"
+"\\9" "¯"
+"\\0" "•"
+"\\-" "÷"
+"\\=" "×"
+"\\~" "¬"
+"\\!" "⎉"
+"\\@" "⚇"
+"\\#" "⍟"
+"\\$" "◶"
+"\\%" "⊘"
+"\\^" "⎊"
+"\\&" "⍎"
+"\\*" "⍕"
+"\\(" "⟨"
+"\\)" "⟩"
+"\\_" "√"
+"\\+" "⋆"
+"\\q" "⌽"
+"\\w" "𝕨"
+"\\e" "∊"
+"\\r" "↑"
+"\\t" "∧"
+"\\y" "y"
+"\\u" "⊔"
+"\\i" "⊏"
+"\\o" "⊐"
+"\\p" "π"
+"\\[" "←"
+"\\]" "→"
+"\\Q" "↙"
+"\\W" "𝕎"
+"\\E" "⍷"
+"\\R" "𝕣"
+"\\T" "⍋"
+"\\Y" "Y"
+"\\U" "U"
+"\\I" "⊑"
+"\\O" "⊒"
+"\\P" "⍳"
+"\\{" "⊣"
+"\\}" "⊢"
+"\\a" "⍉"
+"\\s" "𝕤"
+"\\d" "↕"
+"\\f" "𝕗"
+"\\g" "𝕘"
+"\\h" "⊸"
+"\\j" "∘"
+"\\k" "○"
+"\\l" "⟜"
+"\\;" "⋄"
+"\\'" "↩"
+"\\A" "↖"
+"\\S" "𝕊"
+"\\D" "D"
+"\\F" "𝔽"
+"\\G" "𝔾"
+"\\H" "«"
+"\\J" "J"
+"\\K" "⌾"
+"\\L" "»"
+"\\:" "·"
+"\\\"" "˙"
+"\\|" "|"
+"\\z" "⥊"
+"\\x" "𝕩"
+"\\c" "↓"
+"\\v" "∨"
+"\\b" "⌊"
+"\\n" "n"
+"\\m" "≡"
+"\\," "∾"
+"\\." "≍"
+"\\/" "≠"
+"\\Z" "⋈"
+"\\X" "𝕏"
+"\\C" "C"
+"\\V" "⍒"
+"\\B" "⌈"
+"\\N" "N"
+"\\M" "≢"
+"\\<" "≤"
+"\\>" "≥"
+"\\?" "⇐"
+"\\ " "‿"
+
+# If you want to use this with rlwrap, the following command works for me
+# > INPUTRC='~/.dyalog/inputrc' rlwrap -a dyalog -s -b
+# Which can then be aliased to whatever you like
+
+"`[": "←"
+
+"`-": "×"
+"`=": "÷"
+"`p": "*"
+"`*": "⍟"
+"`+": "⌹"
+"`o": "○"
+"`_": "!"
+"`q": "?"
+
+"`m": "|"
+"`s": "⌈"
+"`d": "⌊"
+"`b": "⊥"
+"`n": "⊤"
+"`|": "⊣"
+"`\\": "⊢"
+
+"`5": "="
+"`8": "≠"
+"`4": "≤"
+"`3": "<"
+"`7": ">"
+"`6": "≥"
+"`:": "≡"
+"`\"": "≢"
+
+"`9": "∨"
+"`0": "∧"
+"`)": "⍲"
+"`(": "⍱"
+
+"`y": "↑"
+"`u": "↓"
+"`z": "⊂"
+"`x": "⊃"
+"`Z": "⊆"
+"`L": "⌷"
+"`$": "⍋"
+"`#": "⍒"
+
+"`i": "⍳"
+"`I": "⍸"
+"`e": "∊"
+"`E": "⍷"
+"`v": "∪"
+"`c": "∩"
+"`t": "~"
+
+"`/": "⌿"
+"`.": "⍀"
+
+"`<": "⍪"
+"`r": "⍴"
+"`%": "⌽"
+"`&": "⊖"
+"`^": "⍉"
+
+"`1": "¨"
+"`T": "⍨"
+"`P": "⍣"
+"`j": "∘"
+"`J": "⍤"
+"`O": "⍥"
+"`F": "⍛"
+
+"`l": "⎕"
+"`?": "⍠"
+"`K": "⌸"
+"`~": "⌺"
+"`!": "⌶"
+"`;": "⍎"
+"`'": "⍕"
+
+"``": "⋄"
+"`,": "⍝"
+"`w": "⍵"
+"`a": "⍺"
+"`g": "∇"
+
+"`2": "¯"
+"`}": "⍬"
+
+"`g": "∇"
+"`G": "⍢"
+"`>": "⍙"
+"`N": "¤"
+"`M": "∥"

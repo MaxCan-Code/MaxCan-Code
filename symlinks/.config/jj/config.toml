@@ -1,0 +1,5 @@
+[user]
+name = "MaxCan-Code"
+email = "35848843+MaxCan-Code@users.noreply.github.com"
+[ui]
+default-command = ["log"]
