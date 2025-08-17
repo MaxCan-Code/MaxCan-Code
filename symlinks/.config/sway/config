@@ -1,0 +1,76 @@
+include /etc/sway/config
+# https://gist.github.com/rpigott/a3efdc08fa4d5fd7df38d091ab5e8532 _swaymsg
+### Idle configuration
+exec swayidle -w \
+         timeout 300 'swaymsg "output * power off"' \
+         resume 'swaymsg "output * power on" && brightnessctl -r' \
+         timeout 600 'swaylock -f -i ~/w/linus.png -s center' \
+         timeout 900 'systemctl suspend'
+
+### Input configuration
+    input type:touchpad {
+        dwt enabled
+        tap enabled
+        natural_scroll enabled
+        middle_emulation enabled
+        accel_profile adaptive
+        events disabled
+    }
+    input type:keyboard {
+        xkb_layout us,us(dvp)
+        # xkb_options grp:menu_switch,misc:apl
+        # xkb_options caps:ctrl_modifier,caps:escape
+    }
+    seat "*" hide_cursor when-typing enable
+
+workspace_auto_back_and_forth yes
+gaps inner 5
+output * bg ~/w/D4DJ_FES24_KV_0301-1.jpg fit
+
+### Key bindings
+    unbindsym {
+        $mod+9
+        $mod+8
+        $mod+7
+        $mod+6
+        $mod+5
+        $mod+Shift+e
+    }
+
+    bindsym {
+        $mod+9 workspace number 9 , output * bg ~/w/full-graph-extended-darkmode.png fit
+        $mod+8 workspace number 8 , output * bg ~/w/File:LL-JJBA-Yoshiko-fallen-angel-Kakoin-pose.jpg fit
+        $mod+7 workspace number 7 , output * bg ~/w/jellfish.png fit
+        $mod+6 workspace number 6 , output * bg ~/w/BanG.Dream%21.Girls.Band.Party%21.full.3232753.png fit
+        $mod+5 workspace number 5 , output * bg ~/w/D4DJ_FES24_KV_0301-1.jpg fit
+        $mod+Shift+e exit
+        $mod+Shift+m input type:touchpad events toggle
+        $mod+Shift+o input type:keyboard xkb_switch_layout next
+    }
+#
+# Resizing containers:
+#
+mode "resize" {
+    bindsym {
+        Shift+$left resize shrink width 100px
+        Shift+$down resize grow height 100px
+        Shift+$up resize shrink height 100px
+        Shift+$right resize grow width 100px
+    }
+}
+#
+# Status Bar:
+#
+bar bar-0 {
+    font pango:monospace 13
+    status_command i3status
+    colors {
+        focused_workspace  #32323200 #2e9ef4 #ffffffff
+        inactive_workspace #4c7899ff #4c7899 #ffffffff
+    }
+}
+# chiyu
+client.focused   #4ca899 #00bbff #ffffff
+
+exec activate-linux
+exec foot tmux
